@@ -1,0 +1,5 @@
+<div :id="this.$options.name.toLowerCase() + '-page'">
+    <slot v-bind:d="d">
+    </slot>
+    <notifications :position="notifyPos" />
+</div>
