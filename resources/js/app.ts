@@ -120,3 +120,5 @@ const app = new Vue({
         }
     }
 });
+
+console.log('something not happing, testing testing testing...');

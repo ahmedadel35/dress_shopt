@@ -30,7 +30,7 @@
                     <span
                         class="badge badge-danger p-2 off-badge position-absolute"
                     >
-                        <strong> {{ offTxt }} {{ p.save }} % </strong>
+                        <strong> {{ offTxt }} {{ (p.save).toFixed(2) }} % </strong>
                     </span>
                     <a
                         href="#"
