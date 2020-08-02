@@ -11,4 +11,8 @@
         class="btn btn-outline-success btn-brand {{$cls ?? ''}} transition fast mr-2 mt-2">
         <i class='fab fa-whatsapp'></i>
     </a>
+    <a href='tel:+201551352296'
+        class="btn btn-outline-info btn-brand {{$cls ?? ''}} transition fast mr-2 mt-2">
+        <i class='fas fa-phone-alt'></i>
+    </a>
 </div>
