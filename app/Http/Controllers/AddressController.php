@@ -93,8 +93,8 @@ class AddressController extends Controller
         $res = $request->validated();
         unset($res['userMail']);
 
-        $res['country'] =  __('countries.' . $res->country);
-        $res['gov'] = __('gov.eg.' . $res->gov);
+        $res['country'] =  __('countries.' . $res['country']);
+        $res['gov'] = __('gov.eg.' . $res['gov']);
 
         $updated = $address->update($res);
 

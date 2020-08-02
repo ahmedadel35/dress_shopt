@@ -1,0 +1,86 @@
+{
+    "id": 5206230,
+    "created_at": "2020-06-10T20:10:10.154924",
+    "delivery_needed": false,
+    "merchant": {
+        "id": 11100,
+        "created_at": "2020-05-13T15:47:57.351411",
+        "phones": ["01143647417"],
+        "company_emails": ["abo3adel35@gmail.com"],
+        "company_name": "ninjacoder",
+        "state": "",
+        "country": "EGY",
+        "city": null,
+        "postal_code": "",
+        "street": ""
+    },
+    "collector": null,
+    "amount_cents": 975073,
+    "shipping_data": {
+        "id": 2838270,
+        "first_name": "Reagan",
+        "last_name": "Eichmann",
+        "street": "853 Arianna Avenue",
+        "building": "1",
+        "floor": " ",
+        "apartment": " ",
+        "city": "Jenkinsshire",
+        "state": "East Wilberview",
+        "country": "Burundi",
+        "email": "hessel.ewald@gmail.com",
+        "phone_number": "907.695.2229 x88736",
+        "postal_code": "01892",
+        "extra_description": "Asperiores officia eos quis at rerum laborum ea.",
+        "shipping_method": "UNK",
+        "order_id": 5206230,
+        "order": 5206230
+    },
+    "shipping_details": null,
+    "currency": "EGP",
+    "is_payment_locked": false,
+    "is_return": false,
+    "is_cancel": false,
+    "is_returned": false,
+    "is_canceled": false,
+    "merchant_order_id": null,
+    "wallet_notification": null,
+    "paid_amount_cents": 0,
+    "notify_user_with_email": false,
+    "items": [
+        {
+            "name": "Ea aut commodi necessitatibus corrupti.",
+            "description": "Id et itaque doloremque rerum commodi exercitationem. Qui enim eaque quod porro et velit. Vel culpa expedita eaque sit. Aut laudantium ipsa voluptatem deserunt.",
+            "amount_cents": 182,
+            "quantity": 23
+        },
+        {
+            "name": "Quas reprehenderit temporibus autem eum qui fuga ut.",
+            "description": "Culpa veritatis mollitia dignissimos accusamus velit. Occaecati id ratione eum facilis. Sed qui cum error ea. Non quo eum esse est ipsum repellat provident. Repellat in qui at sit. Provident reprehenderit ea officia repellendus dolores autem incidunt. Et eveniet delectus quia ad.",
+            "amount_cents": 4825,
+            "quantity": 922
+        },
+        {
+            "name": "Consequuntur omnis itaque sapiente accusamus sed architecto.",
+            "description": "Eos ut ex enim atque eos non eum. Enim ea provident et rem sint perspiciatis. Illo quidem aliquam qui doloribus qui laudantium quo. Vero ducimus voluptatibus praesentium minus quia velit minus et. Sit autem sit in ea illo aut mollitia. Iusto hic repellendus ut nulla quis asperiores et eius. Quasi dicta ut consectetur perspiciatis inventore.",
+            "amount_cents": 2553,
+            "quantity": 43
+        },
+        {
+            "name": "Non sit fuga aut aut est dolor quos.",
+            "description": "Inventore asperiores nobis sed numquam vel delectus ducimus. Ea nemo non id aut nemo voluptas. Labore et ea recusandae occaecati provident nesciunt sit sint. Nemo delectus dignissimos voluptatum laborum quos nisi sed magnam.",
+            "amount_cents": 4624,
+            "quantity": 135
+        }
+    ],
+    "order_url": "https://accept.paymobsolutions.com/i/82Gi",
+    "commission_fees": 0,
+    "delivery_fees_cents": 0,
+    "delivery_vat_cents": 0,
+    "payment_method": "tbc",
+    "merchant_staff_tag": null,
+    "api_source": "OTHER",
+    "pickup_data": null,
+    "delivery_status": [],
+    "token": "82Gi",
+    "url": "https://accept.paymobsolutions.com/i/82Gi"
+}
