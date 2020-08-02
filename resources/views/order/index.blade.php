@@ -5,7 +5,6 @@
 @endsection
 
 @section('cartContent')
-<h1>Orders Page</h1>
 <div class="redirectingOverLay position-fixed w-100 h-100"
     v-show="h.d.savingOrder && h.d.paymentMethod === 'accept'">
     <div class="container d-flex h-100 position-relative">

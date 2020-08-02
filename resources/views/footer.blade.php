@@ -27,14 +27,14 @@
             </div>
             <div class="col-sm-6 pt-2 mt-2 text-center copy text-light">
                 <div class="row">
-                    <div class="col-12 col-md-6 mb-2 rounded">
+                    <div class="col-6 col-sm-12 col-md-6 mb-2 rounded">
                         <div class="p-2 bg-light text-dark mx-2">
                             <strong>
                                 {{__('order.cashOnDelivery')}}
                             </strong>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-2 text-left">
+                    <div class="col-6 col-sm-12 col-md-6 mb-2 text-left">
                         <i
                             class="fab fa-cc-visa fa-3x text-primary mx-1 bg-light px-1 rounded"></i>
                         <i
