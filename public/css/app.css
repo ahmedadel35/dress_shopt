@@ -7326,5 +7326,10 @@ a.nav-link.btn.btn-clear:hover {
   z-index: 99;
 }
 
+.smallDress {
+  display: block;
+  font-size: 0.7rem;
+}
+
 
 /*# sourceMappingURL=app.css.map*/
