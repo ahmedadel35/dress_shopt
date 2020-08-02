@@ -20,9 +20,11 @@
                             @{{h.d.address.firstName}} @{{h.d.address.lastName}}
                         </h5>
                         <strong class="d-block">(@{{h.d.address.dep}})
-                            @{{h.d.address.address}},</strong>
+                            @{{h.d.address.address}}</strong>
                         <span>@{{h.d.address.city}},
-                            @{{h.d.address.country}}</span>
+                            {{-- @{{h.d.address.country}} --}}
+                            {{__('countries.eg')}}
+                        </span>
                         <div class="d-block">
                             <i class="fas fa-phone mr-1"></i>
                             <span>@{{h.d.address.phoneNumber}}</span>

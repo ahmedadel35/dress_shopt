@@ -24,6 +24,7 @@ export default class AddressMixin extends Super {
         self.form.withTrans = param.withTrans;
 
         const res = await Axios[method](uri, self.form);
+        // console.log(self.form);
         // console.log(res, res.status);
         if (res && res.status === 422) {
             self.hasErrors = true;
@@ -33,7 +34,7 @@ export default class AddressMixin extends Super {
             return null;
         }
 
-        if (!res || !res.data) {
+        if (!res || !res.data || res.status > 204) {
             this.error();
             return null;
         }

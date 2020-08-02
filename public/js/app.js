@@ -20284,7 +20284,6 @@ var app = new vue_property_decorator__WEBPACK_IMPORTED_MODULE_0__["Vue"]({
         }
     }
 });
-console.log('something not happing, testing testing testing...');
 
 
 /***/ }),

@@ -78,6 +78,7 @@ export interface OrderCtrlData {
     deletingAddress: boolean;
     savingOrder: boolean;
     addressChecked: boolean;
+    userMail: string;
 }
 
 @Component
@@ -112,7 +113,8 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
         hasErrors: false,
         deletingAddress: false,
         savingOrder: false,
-        addressChecked: false
+        addressChecked: false,
+        userMail: '',
     };
 
     public addAddress() {
@@ -155,6 +157,9 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
             return;
         }
 
+        this.d.form.userMail = res.data.userMail;
+        this.d.userMail = res.data.userMail;
+
         if (!res.data.ads.length) {
             this.d.emptyAddressList = true;
             this.d.loadingAdresses = false;
@@ -163,7 +168,6 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
 
         this.d.addressesLoader = [];
         this.d.addresses = res.data.ads;
-        this.d.form.userMail = res.data.userMail;
         this.d.error = Object.assign({}, this.resetFormObj);
         this.d.loadingAdresses = false;
     }
@@ -209,15 +213,14 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
     }
 
     public async saveAddress(update: boolean = false) {
-        this.d.addressChecked = false;
         const res = await this.saveAddressNative(this.d, update);
 
         if (!res) {
             this.d.continue = false;
             this.d.savingOrder = false;
+            // this.showAddressForm();
             return;
         }
-
         if (!update) {
             this.d.address = res;
             this.d.addresses.push(res);
@@ -233,7 +236,7 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
                 return x;
             });
         }
-
+        
         this.d.hasErrors = false;
         this.d.addressChecked = true;
         this.d.continue = false;
@@ -248,6 +251,12 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
             return;
         }
         this.d.savingOrder = true;
+
+        if (!this.d.form.userMail.length) {
+            // check if form userMail was reseted
+            // then assign to user saved email if logged in
+            this.d.form.userMail = this.d.userMail;
+        }
 
         if (this.d.paymentMethod === "accept") {
             const items: CartItemInterface[] = [...this.d.cart.items];
@@ -280,10 +289,11 @@ export default class OrderCtrl extends Mixins(AddressMixin) {
         }
         this.saveAddress()
             .then(res => {
+                if (!res) return; 
                 this.saveOrder();
             })
             .catch(err => {
-                console.log(err.response);
+                // console.log(err.response);
                 this.d.savingOrder = false;
             });
     }

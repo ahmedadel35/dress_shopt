@@ -42,6 +42,7 @@ var AddressMixin = /** @class */ (function (_super) {
                         return [4 /*yield*/, axios__WEBPACK_IMPORTED_MODULE_3___default.a[method](uri, self.form)];
                     case 1:
                         res = _a.sent();
+                        // console.log(self.form);
                         // console.log(res, res.status);
                         if (res && res.status === 422) {
                             self.hasErrors = true;
@@ -50,7 +51,7 @@ var AddressMixin = /** @class */ (function (_super) {
                             this.error();
                             return [2 /*return*/, null];
                         }
-                        if (!res || !res.data) {
+                        if (!res || !res.data || res.status > 204) {
                             this.error();
                             return [2 /*return*/, null];
                         }
@@ -192,7 +193,8 @@ var OrderCtrl = /** @class */ (function (_super) {
             hasErrors: false,
             deletingAddress: false,
             savingOrder: false,
-            addressChecked: false
+            addressChecked: false,
+            userMail: '',
         };
         return _this;
     }
@@ -237,6 +239,8 @@ var OrderCtrl = /** @class */ (function (_super) {
                             this.d.loadingAdresses = false;
                             return [2 /*return*/];
                         }
+                        this.d.form.userMail = res.data.userMail;
+                        this.d.userMail = res.data.userMail;
                         if (!res.data.ads.length) {
                             this.d.emptyAddressList = true;
                             this.d.loadingAdresses = false;
@@ -244,7 +248,6 @@ var OrderCtrl = /** @class */ (function (_super) {
                         }
                         this.d.addressesLoader = [];
                         this.d.addresses = res.data.ads;
-                        this.d.form.userMail = res.data.userMail;
                         this.d.error = Object.assign({}, this.resetFormObj);
                         this.d.loadingAdresses = false;
                         return [2 /*return*/];
@@ -292,14 +295,13 @@ var OrderCtrl = /** @class */ (function (_super) {
             var _this = this;
             return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__generator"])(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        this.d.addressChecked = false;
-                        return [4 /*yield*/, this.saveAddressNative(this.d, update)];
+                    case 0: return [4 /*yield*/, this.saveAddressNative(this.d, update)];
                     case 1:
                         res = _a.sent();
                         if (!res) {
                             this.d.continue = false;
                             this.d.savingOrder = false;
+                            // this.showAddressForm();
                             return [2 /*return*/];
                         }
                         if (!update) {
@@ -335,6 +337,11 @@ var OrderCtrl = /** @class */ (function (_super) {
             return;
         }
         this.d.savingOrder = true;
+        if (!this.d.form.userMail.length) {
+            // check if form userMail was reseted
+            // then assign to user saved email if logged in
+            this.d.form.userMail = this.d.userMail;
+        }
         if (this.d.paymentMethod === "accept") {
             var items = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__spread"])(this.d.cart.items);
             var address = this.d.form;
@@ -364,10 +371,12 @@ var OrderCtrl = /** @class */ (function (_super) {
         }
         this.saveAddress()
             .then(function (res) {
+            if (!res)
+                return;
             _this.saveOrder();
         })
             .catch(function (err) {
-            console.log(err.response);
+            // console.log(err.response);
             _this.d.savingOrder = false;
         });
     };
