@@ -123,7 +123,7 @@ class CartSet
     /**
      * get current cart list
      *
-     * @return void
+     * @return Collection
      */
     public function content()
     {
