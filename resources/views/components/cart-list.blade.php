@@ -20,10 +20,11 @@
             </strong>
             @if ($hasRemove)
             <span class="m-0 py-0 col-2 text-right">
-                <button type="button" class="close px-2 py-1 text-danger"
+                <button type="button" class="close pl-2 pr-1 py-1 text-danger"
                     aria-label="Close"
                     v-on:click.prevent.stop="h.d.removeItem('{{$type}}', c)">
-                    <span aria-hidden="true">&times;</span>
+                    {{-- <span aria-hidden="true">&times;</span> --}}
+                    <span class="fas fa-trash-alt"></span>
                 </button>
             </span>
             @endif
