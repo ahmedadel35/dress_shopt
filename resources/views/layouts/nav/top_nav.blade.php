@@ -1,9 +1,9 @@
 <div class="navbar py-0 bg-dark text-light" style="z-index: 1">
     {{-- <div class="row"> --}}
-        <div class="nav col-sm-6 justify-content-start pt-1 pt-md-0">
-            @include('footer.social', ['cls' => 'btn-sm', 'upcls' => 'pl-4'])
+        <div class="nav col-sm-6 justify-content-start pt-0 pb-1">
+            @include('footer.social', ['cls' => 'btn-sm', 'upcls' => 'pl-4 d-none d-sm-block'])
         </div>
-        <div class="nav col-sm-6 justify-content-end">
+        <div class="nav col-sm-6 justify-content-center justify-content-sm-end">
             @guest
             <li class="nav-item">
                 <a class="nav-link text-light" href="{{route('login')}}">
