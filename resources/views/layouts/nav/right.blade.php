@@ -9,7 +9,7 @@
     </x-slot>
 
     <x-slot name="ndlink">
-        <a href="#" type="button" class="btn btn-clear d-md-none"
+        <button type="button" class="btn btn-clear d-md-none"
             :class="{'mt-0 pt-0': h.d.cartLoader}"
             v-on:click.prevent.stop="h.d.openSide('cartSidebar')">
             <span class="spinner-grow bg-light"
@@ -19,7 +19,7 @@
             <sup class="badge badge-danger align-top">
                 @{{h.d.formatNum(h.d.cart.count)}}
             </sup>
-        </a>
+        </button>
     </x-slot>
 
     <ul class="list-unstyled px-3">
@@ -57,14 +57,14 @@
     </x-slot>
 
     <x-slot name="ndlink">
-        <a href="#" type="button" class="btn btn-clear d-md-none"
+        <button type="button" class="btn btn-clear d-md-none"
             v-on:click.prevent.stop="h.d.openSide('wishSidebar')">
             <i :class="{'animate__heartBeat animate__infinite': h.d.wishLoader}"
                 class="fa fas fa-heart carticon animate__animated text-light"></i>
             <sup class="badge badge-danger align-top">
                 @{{h.d.formatNum(h.d.cart.wish.length)}}
             </sup>
-        </a>
+        </button>
     </x-slot>
 
     <ul class="list-unstyled px-3">
