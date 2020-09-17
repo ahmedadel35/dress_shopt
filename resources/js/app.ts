@@ -24,6 +24,7 @@ import ProductSlider from "./components/product-slider";
 // import AdminCtrl from './pages/admin-ctrl';
 // import AdminProductList from './pages/admin-product-list';
 // import VueTagsInput from '@johmun/vue-tags-input';
+import VueLazyload from "vue-lazyload";
 
 Axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 Axios.interceptors.response.use(
@@ -46,6 +47,12 @@ Axios.interceptors.response.use(
 Vue.config.productionTip = false;
 
 Vue.use(Notifications);
+Vue.use(VueLazyload, {
+    preLoad: 1.3,
+    error: "/error.svg",
+    loading: "/rings.svg",
+    attempt: 1
+});
 
 Vue.component("sidebar", SideBar);
 Vue.component("star-rate", StarRate);
@@ -60,63 +67,63 @@ Vue.component("number-select", NumberSelector);
 Vue.component("quickview-loader", QuickViewLoader);
 Vue.component("filter-collabse", FilterCollabse);
 Vue.component("product-slider", ProductSlider);
-Vue.component('vue-tags-input', function (res) {
+Vue.component("vue-tags-input", function(res) {
     // @ts-ignore
-    require(["@johmun/vue-tags-input"], res)
+    require(["@johmun/vue-tags-input"], res);
 });
 
 const app = new Vue({
     el: "#app",
     components: {
         Home,
-        'product-list': (res) => {
+        "product-list": res => {
             // @ts-ignore
-            require(["./pages/product-list"], res)
+            require(["./pages/product-list"], res);
         },
-        ProductShow: (res) => {
+        ProductShow: res => {
             // @ts-ignore
-            require(["./pages/product-show"], res)
+            require(["./pages/product-show"], res);
         },
-        Cart: (res) => {
+        Cart: res => {
             // @ts-ignore
-            require(["./pages/cart"], res)
+            require(["./pages/cart"], res);
         },
-        OrderCtrl: (res) => {
+        OrderCtrl: res => {
             // @ts-ignore
-            require(["./pages/order-ctrl"], res)
+            require(["./pages/order-ctrl"], res);
         },
-        ContactUs: (res) => {
+        ContactUs: res => {
             // @ts-ignore
-            require(["./pages/contact-us"], res)
+            require(["./pages/contact-us"], res);
         },
-        UserCtrl: (res) => {
+        UserCtrl: res => {
             // @ts-ignore
-            require(["./pages/user-ctrl"], res)
+            require(["./pages/user-ctrl"], res);
         },
-        AdminCtrl: (res) => {
+        AdminCtrl: res => {
             // @ts-ignore
-            require(["./pages/admin-ctrl"], res)
+            require(["./pages/admin-ctrl"], res);
         },
-        AdminProductList: (res) => {
+        AdminProductList: res => {
             // @ts-ignore
-            require(["./pages/admin-product-list"], res)
+            require(["./pages/admin-product-list"], res);
         }
     },
     mounted() {
         Axios.interceptors.response.use(
             response => {
-                
                 return response;
             },
             error => {
-                
                 this.$refs.childCmp.error();
                 return error.response;
             }
         );
-        const splash = document.querySelector('#splashScreen') as HTMLDivElement;
+        const splash = document.querySelector(
+            "#splashScreen"
+        ) as HTMLDivElement;
         if (splash) {
-            splash.classList.add('d-none');
+            splash.classList.add("d-none");
         }
     }
 });

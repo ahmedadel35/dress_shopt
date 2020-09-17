@@ -17,7 +17,7 @@
                         v-on:click.prevent.stop=""
                     >
                         <img
-                            :src="p.images[0]"
+                            v-lazy="p.images[0]"
                             class="w-100"
                             :class="{
                                 'card-img': !isTouch || !is_land,
