@@ -13,7 +13,7 @@
         <x-a class="navbar-brand ml-3" href="/">
             <div class="row p-0 m-0">
                 <div class="col-3 p-0 m-0">
-                    <img class="rounded mx-auto" width="20" src="/storage/site/logo-big.png" />
+                    <img class="rounded mx-auto" width="20" src="/icon/favicon.ico" />
                 </div>
                 <div class="col-9 p-0 m-0">
                     <strong class="text-center text-warning">Dress</strong>
