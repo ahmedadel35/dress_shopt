@@ -9,8 +9,8 @@
     </ol>
     <div class="carousel-inner">
         @foreach ($carImgs as $cimg)
-        <div class="carousel-item @if($loop->first) active @endif">
-            <img class="img-fluid" src="{{$cimg->img}}"
+        <div class="carousel-item @if($loop->first) active @endif bg-dark" v-lazy-container="{ selector: 'img', loading: 'rings-dark.svg' }">
+            <img class="img-fluid" data-src="{{$cimg->img}}"
                 alt="{{$cimg->title}}">
             <div class="carousel-caption">
                 <h3>{{$cimg->title}}</h3>

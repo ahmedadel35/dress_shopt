@@ -3,7 +3,7 @@
 
 // Variables
 @import "variables";
-
+@import "media";
 // Bootstrap
 // @import "../../node_modules/bootstrap/scss/mixins/_breakpoints";
 @mixin vendor-prefix($name, $value) {
@@ -934,4 +934,26 @@ a.nav-link.btn.btn-clear {
 .smallDress {
     display: block;
     font-size: 0.7rem;
+}
+
+#homeImagesCarousel {
+    img {
+        width: 100vw;
+        height: 50vh;
+    }
+    @include media('>=sm', '<md') {
+        img {
+            height: 70vh;
+        }
+    }
+    @include media('>=md', '<lg') {
+        img {
+            height: 80vh;
+        }
+    }
+    @include media('>=lg') {
+        img {
+            height: 85vh;
+        }
+    }
 }
