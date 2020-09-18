@@ -375,6 +375,7 @@ export default class ProductList extends Mixins(
     }
 
     public searchFor() {
+        if (!this.d.q || !this.d.q.length) return;
         this.d.searching = true;
         this.loadData(`/collection/find`);
     }

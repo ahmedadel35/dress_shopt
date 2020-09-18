@@ -11,8 +11,8 @@
             </button>
         </div>
         <input type="search" class="form-control"
-            :class="{'is-invalid': h.d.q.length && h.d.q.length < 4}"
+            :class="{'is-invalid': h.d.q.length && h.d.q.length < 3}"
             id="search-query{{random_int(3, 324234234)}}" placeholder="{{__('t.show.serpl')}}"
-            aria-labelledby="search" minlength="4" name="q" v-model="h.d.q" />
+            aria-labelledby="search" minlength="3" name="q" v-model.trim="h.d.q" />
     </div>
 </form>

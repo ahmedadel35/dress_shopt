@@ -303,6 +303,8 @@ var ProductList = /** @class */ (function (_super) {
         this.loadData(uri, false);
     };
     ProductList.prototype.searchFor = function () {
+        if (!this.d.q || !this.d.q.length)
+            return;
         this.d.searching = true;
         this.loadData("/collection/find");
     };
