@@ -6808,8 +6808,22 @@ a.nav-link.btn.btn-clear:hover {
 }
 
 .sidebar .nav-link.active {
-  border-left: 4px solid var(--light);
-  color: var(--light);
+  border-left: 4px solid #ff847b;
+  color: #ff847b;
+}
+
+.sidebar .nav-link.active.super {
+  border-left: 4px solid var(--warning);
+  color: var(--warning);
+}
+
+.sidebar .nav-link.active.notSuper {
+  border-left: 4px solid var(--success);
+  color: var(--success);
+}
+
+.sidebar .nav-link.active i::before {
+  content: "\F063";
 }
 
 .sidebar .nav-link:hover i {

@@ -454,8 +454,19 @@ a.nav-link.btn.btn-clear {
         font-size: medium;
         transition: all 0.5s;
         &.active {
-            border-left: 4px solid var(--light);
-            color: var(--light);
+            border-left: 4px solid #ff847b;
+            color: #ff847b;
+            &.super {
+                border-left: 4px solid var(--warning);
+                color: var(--warning);
+            }
+            &.notSuper {
+                border-left: 4px solid var(--success);
+                color: var(--success);
+            }
+            i::before {
+                content: "\f063";
+            }
         }
         &:hover {
             i {
@@ -941,17 +952,17 @@ a.nav-link.btn.btn-clear {
         width: 100vw;
         height: 50vh;
     }
-    @include media('>=sm', '<md') {
+    @include media(">=sm", "<md") {
         img {
             height: 70vh;
         }
     }
-    @include media('>=md', '<lg') {
+    @include media(">=md", "<lg") {
         img {
             height: 80vh;
         }
     }
-    @include media('>=lg') {
+    @include media(">=lg") {
         img {
             height: 85vh;
         }
@@ -961,12 +972,12 @@ a.nav-link.btn.btn-clear {
     img {
         height: 15vh;
     }
-    @include media('>=sm', '<md') {
+    @include media(">=sm", "<md") {
         img {
             height: 20vh;
         }
     }
-    @include media('>=md') {
+    @include media(">=md") {
         img {
             height: 25vh;
         }
