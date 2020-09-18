@@ -24,13 +24,6 @@
 </div>
 <div class="row list-unstyled">
     <div class="col-12 col-md-9 mb-3 card card-body">
-        <div class="border-bottom py-2 d-block" v-if="h.d.cart.count > -5 && !h.d.cart.items.length">
-            <div class="alert alert-danger align-content-center">
-                <strong>
-                    {{__('product.noItems')}}
-                </strong>
-            </div>
-        </div>
         <x-cart-list :has-remove="false" :shopList="true">
             <div class="row mb-2">
                 <strong class="col-12 col-sm-6">
