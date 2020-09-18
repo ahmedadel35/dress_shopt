@@ -957,3 +957,18 @@ a.nav-link.btn.btn-clear {
         }
     }
 }
+.cat-card {
+    img {
+        height: 15vh;
+    }
+    @include media('>=sm', '<md') {
+        img {
+            height: 20vh;
+        }
+    }
+    @include media('>=md') {
+        img {
+            height: 25vh;
+        }
+    }
+}
