@@ -18,7 +18,7 @@
                     >
                         <img
                             v-lazy="p.images[0]"
-                            class="w-100"
+                            class="w-100 productImg"
                             :class="{
                                 'card-img': !isTouch || !is_land,
                                 'card-img-top': isTouch,
@@ -148,7 +148,7 @@
                     :class="is_land ? 'border-none bg-white' : ''"
                 >
                     <button
-                        class="btn btn-outline-primary transition"
+                        class="btn btn-outline-primary transition mb-1"
                         @click="addToCart()"
                         :disabled="addingToCart || in_cart || p.qty < 1"
                     >
@@ -163,7 +163,7 @@
                         {{ btnTxt[0] }}
                     </button>
                     <button
-                        class="btn btn-info transition d-none d-sm-inline text-light"
+                        class="btn btn-info transition d-none d-sm-inline text-light mb-1"
                         @click.prevent="$emit('modal', p.slug)"
                     >
                         <i class="fa fas fa-search-plus text-light"></i>
@@ -174,7 +174,6 @@
         </div>
     </div>
 </template>
-<style lang="scss"></style>
 <script lang="ts">
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 import ProductInterface from "../interfaces/product";
@@ -474,3 +473,6 @@ export default class ProductItem extends Vue {
     }
 }
 </script>
+<style lang="scss" scoped>
+// @import '../../sass/media.scss';
+</style>
