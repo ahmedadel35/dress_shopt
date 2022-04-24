@@ -24,9 +24,9 @@ $factory->define(App\Product::class, function (Faker $faker) {
             3
         ),
         'images' => [
-            '/storage/product/' . random_int(1, 13) . '.jpg',
-            '/storage/product/' . random_int(1, 13) . '.jpg',
-            '/storage/product/' . random_int(1, 13) . '.jpg',
+            '/default-images//' . random_int(1, 5) . '.jpg',
+            '/default-images//' . random_int(1, 5) . '.jpg',
+            '/default-images//' . random_int(1, 5) . '.jpg',
         ],
         'featured' => (bool)random_int(0, 1)
     ];

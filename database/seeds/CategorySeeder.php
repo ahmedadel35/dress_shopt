@@ -25,11 +25,11 @@ class CategorySeeder extends Seeder
         foreach (range(0, 3) as $i) {
             $c = Category::create([
                 'category_id' => null,
-                'title' => $catsArr[$i]
+                'title' => $catsArr[$i],
             ]);
 
             $c->sub_cats()->createMany(
-                factory(Category::class, mt_rand(2, 5))->raw([
+                factory(Category::class, mt_rand(2, 4))->raw([
                     'category_id' => $c->id
                 ])
             );

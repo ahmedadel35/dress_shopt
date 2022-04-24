@@ -23,7 +23,7 @@ class RateSeeder extends Seeder
         };
         (Product::all())->each(function (Product $p) use ($randId){
             $p->rates()->saveMany(
-                factory(Rate::class, random_int(3, 7))->make([
+                factory(Rate::class, random_int(1, 3))->make([
                     'user_id' => $randId
                 ])
             );

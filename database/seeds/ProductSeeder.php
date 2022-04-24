@@ -22,7 +22,7 @@ class ProductSeeder extends Seeder
         $tags = Tag::all();
 
         $cats->each(function (Category $c) use ($tags) {
-            $products = factory(Product::class, mt_rand(15, 35))
+            $products = factory(Product::class, mt_rand(5, 10))
                 ->create([
                     'category_slug' => $c->slug,
                     'qty' => random_int(0, 563),
