@@ -1,5 +1,8 @@
 <?php
 
 return [
-    'men25' => 'Men'
+    'men' => 'Men',
+    'women' => 'Women',
+    'kids' => 'Kids',
+    'old' => 'Old',
 ];
