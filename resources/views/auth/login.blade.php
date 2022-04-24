@@ -65,6 +65,15 @@
                             </div>
                         </div>
                     </form>
+                    <div class="p-2 bg-dark">
+                        <pre class="text-danger">
+                    admin@site.test
+                    super@site.test
+                    delivery@site.test
+                    user@site.test
+                    password => password
+                        </pre>
+                    </div>
                 </div>
             </div>
         </div>

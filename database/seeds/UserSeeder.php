@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             'email' => 'user@site.test'
         ]);
 
-        factory(User::class, 30)->create();
+        factory(User::class, 10)->create();
 
         DB::commit();
     }
