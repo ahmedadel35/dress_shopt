@@ -21,7 +21,7 @@
             <div class="col-sm-6 pt-2 mt-2 text-center copy">
                 <h5 class="pb-0 mb-0">
                     Copyright <span class="text-danger">Dress</span>&copy; 2020
-                    {{date('Y') > 2020 ? '- ' . data('Y') : ''}}. All rights
+                    {{date('Y') > 2020 ? '- ' . date('Y') : ''}}. All rights
                     reserved
                 </h5>
             </div>
@@ -49,7 +49,7 @@
                     Website Built With <span class="text-danger">&hearts;</span>
                     by <a class="text-danger" target="_blank"
                         href="http://ninjacoder.rf.gd/">ninjaCoder</a> &copy;
-                    2020 {{date('Y') > 2020 ? '- ' . data('Y') : ''}}
+                    2020 {{date('Y') > 2020 ? '- ' . date('Y') : ''}}
                 </p>
             </div>
         </div>
