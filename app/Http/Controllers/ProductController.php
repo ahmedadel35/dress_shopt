@@ -74,10 +74,8 @@ class ProductController extends Controller
 
     public function getFeatured()
     {
-        $products = Product::select('*')
+        $products = Product::inRandomOrder()
             ->where('featured', true)
-            ->where('id', '>=', DB::raw('RAND() * 
-            (SELECT MAX(id) FROM products)'))
             ->orderBy('id')
             ->paginate(8);
 

@@ -91,7 +91,7 @@ class UserProfileController extends Controller
             'onDelivery',
             'accept',
             'addresses',
-            'rates',
+            'rates'
         );
 
         $cats = $this->getList();
