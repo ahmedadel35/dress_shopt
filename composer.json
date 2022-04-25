@@ -22,14 +22,14 @@
         "mcamara/laravel-localization": "^1.5",
         "nicolaslopezj/searchable": "^1.13",
         "omnipay/paypal": "^3.0",
-        "vinkla/hashids": "^8.1"
+        "vinkla/hashids": "^8.1",
+        "laravel/telescope": "^3.2"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
         "facade/ignition": "^2.0",
         "fzaninotto/faker": "^1.9.1",
         "joedixon/laravel-translation": "^1.1",
-        "laravel/telescope": "^3.2",
         "mockery/mockery": "^1.3.1",
         "mpociot/laravel-test-factory-helper": "^2.1",
         "nunomaduro/collision": "^4.1",
@@ -44,7 +44,6 @@
     "extra": {
         "laravel": {
             "dont-discover": [
-                "laravel/telescope",
                 "bumbummen99/shoppingcart",
                 "gloudemans/shoppingcart"
             ]
