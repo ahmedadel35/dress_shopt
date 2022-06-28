@@ -120,7 +120,8 @@
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cairo&display=swap" rel="preload" as='style'
+            onload="this.onload=null; this.rel='stylesheet'">
 
         <!-- Styles -->
         @if(app()->isLocale('ar'))
@@ -137,12 +138,6 @@
         @endif
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/thednp/minifill@0.0.4/dist/minifill.min.js">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
-        <!--[if IE]>
-<script src="node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
-<![endif]-->
         <style>
 
 
@@ -150,21 +145,6 @@
     </head>
 
     <body>
-        <div id="app">
-            <{{ $cpt ?? 'cart' }} ref="childCmp">
-                <template v-slot="h">
-                    @include('layouts.nav.index')
-
-                    <main class="{{ $class ?? 'py-4' }} container-fluid"
-                        id="component-container">
-                        @include('sidebar.left')
-                        @yield('content')
-                        @include('sidebar.right')
-                    </main>
-                    @include('footer')
-                </template>
-            </{{ $cpt ?? 'cart' }}>
-        </div>
         <div style="position: fixed; top: 0;left: 0; z-index:9999; width: 100%; height: 100%; background-color: #343a40"
             id="splashScreen">
             <div style="position: relative">
@@ -183,8 +163,26 @@
                 </div>
             </div>
         </div>
+
+        {{-- main --}}
+        <div id="app">
+            <{{ $cpt ?? 'cart' }} ref="childCmp">
+                <template v-slot="h">
+                    @include('layouts.nav.index')
+
+                    <main class="{{ $class ?? 'py-4' }} container-fluid"
+                        id="component-container">
+                        @include('sidebar.left')
+                        @yield('content')
+                        @include('sidebar.right')
+                    </main>
+                    @include('footer')
+                </template>
+            </{{ $cpt ?? 'cart' }}>
+        </div>
+
         <!-- Load Facebook SDK for JavaScript -->
-        <div id="fb-root"></div>
+        {{-- <div id="fb-root"></div>
         <script>
             window.fbAsyncInit = function () {
                 FB.init({
@@ -202,10 +200,10 @@
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
 
-        </script>
+        </script> --}}
 
         <!-- Your Chat Plugin code -->
-        <div class="fb-customerchat" attribution=setup_tool page_id="106718797740019">
+        {{-- <div class="fb-customerchat" attribution=setup_tool page_id="106718797740019"> --}}
         </div>
     </body>
 
@@ -231,6 +229,9 @@
         ];
 
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/thednp/minifill@0.0.4/dist/minifill.min.js" defer>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js" defer></script>
     <script src="{{ mix('js/app.js') }}" defer>
     </script>
     <script src="{{ asset('js/bootstrap-native-v4.min.js') }}" defer></script>

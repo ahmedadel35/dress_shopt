@@ -1,6 +1,6 @@
 @props(['title', 'slug', 'loader' => true, 'height' => 16,])
 
-<h5 {{$attributes}} id="productModalLabel">
+<h5 {{$attributes}} id="productModalLabel-{{random_int(50, 250)}}">
     @isset ($slug)
     <a v-if="{{$title}}" v-text="{{$title}}"
         :href="'/{{app()->getLocale()}}/product/' + {{$slug}}">

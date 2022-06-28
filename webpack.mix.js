@@ -15,10 +15,10 @@ mix.options({
     .ts("resources/js/app.ts", "public/js")
     .sass("resources/sass/app.scss", "public/css")
     // .browserSync('laravel.test')
-    .polyfill({
-        enabled: true,
-        useBuiltIns: "usage",
-        targets: {"ie": 10},
-        debug: true
-     })
+    // .polyfill({
+    //     enabled: true,
+    //     useBuiltIns: "usage",
+    //     targets: {"ie": 10},
+    //     debug: true
+    //  })
     .version();

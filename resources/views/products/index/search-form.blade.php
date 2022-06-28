@@ -6,7 +6,7 @@
         <div class="input-group-prepend">
             <button type="submit"
                 class="input-group-text btn-clear bg-transparent text-light"
-                id="search-query{{random_int(3, 324234234)}}">
+                id="search-query{{random_int(3, 324234234)}}" aria-label="search">
                 <i class="fas fa-search"></i>
             </button>
         </div>

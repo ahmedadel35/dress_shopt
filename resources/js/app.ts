@@ -30,7 +30,7 @@ Axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 Axios.interceptors.response.use(
     function(response) {
         // TODO show loader
-        console.log(response.data);
+        // console.log(response.data);
         return response;
     },
     function(error) {
@@ -39,7 +39,7 @@ Axios.interceptors.response.use(
             return error.response;
         }
         // console.log(error.response);
-        console.log(error);
+        // console.log(error);
         return Promise.reject(error);
     }
 );

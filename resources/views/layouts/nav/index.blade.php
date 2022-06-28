@@ -13,7 +13,7 @@
         <x-a class="navbar-brand ml-3" href="/">
             <div class="row p-0 m-0">
                 <div class="col-3 p-0 m-0">
-                    <img class="rounded mx-auto" width="20" src="/icon/favicon.ico" />
+                    <img class="rounded mx-auto" width="20" src="/icon/favicon.ico" alt='app logo' height="auto" />
                 </div>
                 <div class="col-9 p-0 m-0">
                     <strong class="text-center text-warning">Dress</strong>
@@ -26,7 +26,7 @@
 
         <button type="button" class="navbar-brand navbar-toggler d-block d-md-none"
             v-on:click.prevent.stop="h.d.openSide('menuSidebar')">
-            <span class="navbar-toggler-icon" aria-label="{{ __('Toggle_navigation') }}"></span>
+            <span class="navbar-toggler-icon" title="{{ __('Toggle_navigation') }}"></span>
         </button>
 
         <div class=" navbar-collapse" id="navbarSupportedContent">

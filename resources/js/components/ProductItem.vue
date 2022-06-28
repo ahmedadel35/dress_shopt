@@ -42,6 +42,7 @@
                             active: in_wish
                         }"
                         @click.prevent="addToWish()"
+                        aria-label="add to wish"
                     >
                         <i
                             class="fa fa-heart"
@@ -86,6 +87,7 @@
                                     disabled:
                                         addingToCart || in_cart || p.qty < 1
                                 }"
+                                aria-label="add to cart"
                             >
                                 <span
                                     v-show="addingToCart"
